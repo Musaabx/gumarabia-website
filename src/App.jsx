@@ -717,17 +717,7 @@ export default function App() {
           <div className="footer-col">
             <h4>Contact</h4>
             <p>Vlaardingen, Netherlands</p>
-            <p
-              style={{
-                marginTop: '10px',
-                fontSize: '12px',
-                color: 'rgba(254,250,242,0.22)',
-                lineHeight: '1.6',
-              }}
-            >
-              Full address available upon request for verified business
-              enquiries.
-            </p>
+            
           </div>
         </div>
         <div className="footer-bottom">
