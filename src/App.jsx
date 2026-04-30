@@ -248,9 +248,18 @@ export default function App() {
   const [submitted, setSubmitted] = useState(false);
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!form.name || !form.email || !form.company) return;
-    setSubmitted(true);
+    try {
+      await fetch("https://formspree.io/f/xqenkbap", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      setSubmitted(true);
+    } catch (e) {
+      setSubmitted(true);
+    }
   };
   const scrollTo = (id) =>
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
